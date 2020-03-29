@@ -1,3 +1,5 @@
+#include "tst_baumercamera.h"
+
 #include <gtest/gtest.h>
 
 int main(int argc, char *argv[])

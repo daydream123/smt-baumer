@@ -5,10 +5,9 @@ if(UNIX)
 endif()
 
 find_package(Baumer MODULE REQUIRED)
-include_directories(${Baumer_INCLUDE_DIRS})
-
 find_package(smt-logger CONFIG REQUIRED)
 
+include_directories(${Baumer_INCLUDE_DIRS})
 aux_source_directory(. DIR_SRCS)
 
 if(UNIX)
