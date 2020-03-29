@@ -7,7 +7,7 @@
 #include <vector>
 #include <cstring>
 #include "BCamera.h"
-#include "smt_logger.h"
+#include <smt-logger/smt_logger.h>
 
 using namespace BGAPI2;
 using namespace std;
