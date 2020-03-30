@@ -3,6 +3,8 @@ project(tests)
 enable_testing()
 find_package(GTest CONFIG REQUIRED)
 
+
+include_directories(../include)
 aux_source_directory(. DIR_SRCS)
 add_executable(${PROJECT_NAME} ${DIR_SRCS})
 

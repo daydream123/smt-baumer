@@ -7,6 +7,7 @@ endif()
 find_package(Baumer MODULE REQUIRED)
 find_package(smt-logger CONFIG REQUIRED)
 
+include_directories(../include)
 include_directories(${Baumer_INCLUDE_DIRS})
 aux_source_directory(. DIR_SRCS)
 
