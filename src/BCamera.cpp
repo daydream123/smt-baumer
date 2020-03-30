@@ -1,5 +1,5 @@
 #include "BCamera.h"
-#include <smt-logger/smt_logger.h>
+#include "smt_logger.h"
 #include "time.h"
 
 using namespace BGAPI2;
