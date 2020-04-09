@@ -3,7 +3,7 @@
 #ifdef WIN32
     #include "bgapi2_ext/bgapi2_ext.h"
 #else
-    #include "bgapi2_genicam/bgapi2_genicam.hpp"
+    #include "bgapi2_genicam.hpp"
 #endif
 
 #include <string>
