@@ -1,5 +1,8 @@
 project(smt-baumer VERSION 1.0.0)
 
+# Allow cmake find third-party FindXXX.cmake
+list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
+
 if(UNIX)
     add_definitions("-D_GNULINUX")
 endif()
@@ -25,6 +28,8 @@ target_link_libraries(${PROJECT_NAME}
         PRIVATE Leica::smt-logger)
 
 # ------------------------------- install script -------------------------------
+# Copy FindXXX.cmake of third-part
+install(FILES cmake/FindBaumer.cmake DESTINATION lib/cmake/${PROJECT_NAME})
 
 # Configuration
 set(PROJECT_CONFIG "${CMAKE_CURRENT_BINARY_DIR}/${PROJECT_NAME}Config.cmake")
@@ -45,7 +50,7 @@ write_basic_package_version_file(${VERSION_CONFIG}
         COMPATIBILITY SameMajorVersion)
 
 # Configure 'xxxConfig.cmake'
-configure_package_config_file(Config.cmake.in ${PROJECT_CONFIG}
+configure_package_config_file(cmake/Config.cmake.in ${PROJECT_CONFIG}
         INSTALL_DESTINATION lib/cmake/${PROJECT_NAME})
 
 # Targets:
