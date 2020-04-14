@@ -4,9 +4,13 @@ set(CMAKE_AUTOUIC ON)
 set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 
-if (DEFINED ENV{QT5_ROOT})
-    set(CMAKE_PREFIX_PATH "/usr;$ENV{QT5_ROOT}" CACHE STRING "")
+list(APPEND CMAKE_PREFIX_PATH "/usr/local")
+
+if (DEFINED ENV{QT_ROOT})
+    list(APPEND CMAKE_PREFIX_PATH "$ENV{QT_ROOT}")
 endif ()
+
+message("--------" "${CMAKE_PREFIX_PATH}")
 
 find_package(Qt5 COMPONENTS Widgets REQUIRED)
 
